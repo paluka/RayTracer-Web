@@ -37,7 +37,7 @@
                     <br/><br />
                     <div>
                         <div style="height:400px;">
-                        <div style="float:left; text-align:left;line-height:26px;">
+                        <div style="float:left; text-align:left;line-height:27px;">
                             Number of Spheres (min: 1 - max:20):<br/>
                             Minimum Radius of the Spheres (min: 1 - max: 200):<br>
                             Maximum Radius of the Spheres (min: 1 - max: 200):<br>
@@ -57,53 +57,53 @@
                         
                             <div style="float:left;width:20px; margin-left:15px;">
                                 <input id="numSpheres" value="12">
-                                <div style="width:117px;">
+                                <div style="width:127px;">
                                     <input id="minSpheres" value="5" > Random
                                     <input type="checkbox" id="randSphereMin" checked>
                                 </div>
-                                <div style="width:117px;">
+                                <div style="width:127px;">
                                     <input id="maxSpheres" value="50" > Random
                                     <input type="checkbox" id="randSphereMax" checked>
                                 </div>
                                 <input id="width" value="400" >
                                 <input id="height" value="400" >
-                                <div style="width:117px;">
+                                <div style="width:127px;">
                                     <input id="minRefl" value="0.55" > Random
                                     <input type="checkbox" id="randMinRefl">
                                 </div>
-                                <div style="width:201px;">
+                                <div style="width:213px;">
                                     <input id="l1R" value="0.35" >
                                     <input id="l1G" value="0.15" >
                                     <input id="l1B" value="0.80" > Random
                                     <input type="checkbox" id="randL1">
                                 </div>
-                                <div style="width:201px;">
+                                <div style="width:213px;">
                                     <input id="l2R" value="0.75" >
                                     <input id="l2G" value="0.85" >
                                     <input id="l2B" value="0.10" > Random
                                     <input type="checkbox" id="randL2">
                                 </div>
-                                <div style="width:201px;">
+                                <div style="width:213px;">
                                     <input id="l1X" value="-500" >
                                     <input id="l1Y" value="400" >
                                     <input id="l1Z" value="-300" > Random
                                     <input type="checkbox" id="randL1Pos">
                                 </div>
-                                <div style="width:201px;">
+                                <div style="width:213px;">
                                     <input id="l2X" value="200" >
                                     <input id="l2Y" value="-150" >
                                     <input id="l2Z" value="100" > Random
                                     <input type="checkbox" id="randL2Pos">
                                 </div>
-                                <input style="height:19px;" type="checkbox" id="includeSpec" checked>
-                                <input style="height:19px;" type="checkbox" id="includePlane">
-                                <div style="width:201px;">
+                                <input style="" type="checkbox" id="includeSpec" checked>
+                                <input style="" type="checkbox" id="includePlane">
+                                <div style="width:213px;">
                                     <input id="pX" value="200" >
                                     <input id="pY" value="-150" >
                                     <input id="pZ" value="400" > Random
                                     <input type="checkbox" id="randPPos">
                                 </div>
-                                <div style="width:122px;">
+                                <div style="width:124px;">
                                     <input id="pnX" value="0" >
                                     <input id="pnY" value="1.0" >
                                     <input id="pnZ" value="1.0" >
@@ -111,9 +111,9 @@
                                 <input id="planeRefl" value="0.55">
                             </div>
                            </div>
-                            <a onclick="startJS();"><div class="button" >Click here to Ray Trace</div></a>
+                            <a onclick="startJS();"><div class="button" style="float:right;" >Click here to Ray Trace</div></a>
                         
-                        <div style="padding-top:50px">Resources: <br />
+                        <div style="padding-top:100px">Resources: <br />
                             <a href="http://www.cc.gatech.edu/~phlosoft/photon/" target="_blank">1</a>,
                             <a href="http://www.cs.unc.edu/~rademach/xroads-RT/RTarticle.html" target="_blank">2</a>,
                             <a href="http://graphics.stanford.edu/courses/cs148-10-summer/docs/2006--degreve--reflection_refraction.pdf" target="_blank">3</a>,

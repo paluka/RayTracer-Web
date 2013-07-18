@@ -10,11 +10,109 @@
       <link rel="stylesheet" href="../../style.css" type="text/css" media="screen" />
           <script type="text/javascript" src="raytracer.js"></script>
   
+  <script>
+    function changeDisabled(target){
+    
+        if(target.id == "randSphereMin"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("minSpheres").disabled = true;   
+            } else {
+                document.getElementById("minSpheres").disabled = false;
+            }
+        }
+        
+        if(target.id == "randSphereMax"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("maxSpheres").disabled = true;   
+            } else {
+                document.getElementById("maxSpheres").disabled = false;
+            }
+        }
+        
+        if(target.id == "randMinRefl"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("minRefl").disabled = true;   
+            } else {
+                document.getElementById("minRefl").disabled = false;
+            }
+        }
+        
+        if(target.id == "randL1"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("l1R").disabled = true;
+                document.getElementById("l1G").disabled = true;
+                document.getElementById("l1B").disabled = true;                
+            } else {
+                document.getElementById("l1R").disabled = false;
+                document.getElementById("l1G").disabled = false;
+                document.getElementById("l1B").disabled = false;
+            }
+        }
+        
+        if(target.id == "randL2"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("l2R").disabled = true;
+                document.getElementById("l2G").disabled = true;
+                document.getElementById("l2B").disabled = true;                
+            } else {
+                document.getElementById("l2R").disabled = false;
+                document.getElementById("l2G").disabled = false;
+                document.getElementById("l2B").disabled = false;
+            }
+        }
+        
+        if(target.id == "randL1Pos"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("l1X").disabled = true;
+                document.getElementById("l1Y").disabled = true;
+                document.getElementById("l1Z").disabled = true;                
+            } else {
+                document.getElementById("l1X").disabled = false;
+                document.getElementById("l1Y").disabled = false;
+                document.getElementById("l1Z").disabled = false;
+            }
+        }
+        
+        if(target.id == "randL2Pos"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("l2X").disabled = true;
+                document.getElementById("l2Y").disabled = true;
+                document.getElementById("l2Z").disabled = true;                
+            } else {
+                document.getElementById("l2X").disabled = false;
+                document.getElementById("l2Y").disabled = false;
+                document.getElementById("l2Z").disabled = false;
+            }
+        }
+        
+        if(target.id == "randPPos"){
+            if(document.getElementById(target.id).checked){
+                document.getElementById("pX").disabled = true;
+                document.getElementById("pY").disabled = true;
+                document.getElementById("pZ").disabled = true;                
+            } else {
+                document.getElementById("pX").disabled = false;
+                document.getElementById("pY").disabled = false;
+                document.getElementById("pZ").disabled = false;
+            }
+        }
+    }
+  
+  </script>
 
   <style>
     input {
         max-width:30px;
     }
+    
+    #inputsContainer {
+        float: left;
+        margin-left: 15px;
+        width: 300px;
+        text-align: left;
+    }
+    
+    
   </style>
   </head>
   <body onload="startJS();" >
@@ -51,62 +149,62 @@
                             Include Specular Reflection:<br>
                             Include Plane:<br>
                             Plane Position (X, Y, Z):<br>
-                            Plane Normal (nX, nY, nZ - min: 0.00 - max: 1.00):<br>
+                            Plane Normal (nX, nY, nZ - min: -1.00 - max: 1.00):<br>
                             Plane Reflection Ratio (min: 0.10 - max: 1.00):
                         </div>
                         
-                            <div style="float:left;width:20px; margin-left:15px;">
+                            <div id="inputsContainer">
                                 <input id="numSpheres" value="12">
-                                <div style="width:127px;">
-                                    <input id="minSpheres" value="5" > Random
-                                    <input type="checkbox" id="randSphereMin" checked>
+                                <div>
+                                    <input id="minSpheres" value="30" disabled> Random
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randSphereMin" checked>
                                 </div>
-                                <div style="width:127px;">
-                                    <input id="maxSpheres" value="50" > Random
-                                    <input type="checkbox" id="randSphereMax" checked>
+                                <div>
+                                    <input id="maxSpheres" value="100" disabled> Random
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randSphereMax" checked>
                                 </div>
-                                <input id="width" value="400" >
+                                <input id="width" value="400" ><br>
                                 <input id="height" value="400" >
-                                <div style="width:127px;">
+                                <div>
                                     <input id="minRefl" value="0.55" > Random
-                                    <input type="checkbox" id="randMinRefl">
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randMinRefl">
                                 </div>
-                                <div style="width:213px;">
-                                    <input id="l1R" value="0.35" >
-                                    <input id="l1G" value="0.15" >
+                                <div>
+                                    <input id="l1R" value="0.75" >
+                                    <input id="l1G" value="0.65" >
                                     <input id="l1B" value="0.80" > Random
-                                    <input type="checkbox" id="randL1">
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randL1">
                                 </div>
-                                <div style="width:213px;">
+                                <div>
                                     <input id="l2R" value="0.75" >
                                     <input id="l2G" value="0.85" >
-                                    <input id="l2B" value="0.10" > Random
-                                    <input type="checkbox" id="randL2">
+                                    <input id="l2B" value="0.90" > Random
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randL2">
                                 </div>
-                                <div style="width:213px;">
+                                <div>
                                     <input id="l1X" value="-500" >
                                     <input id="l1Y" value="400" >
                                     <input id="l1Z" value="-300" > Random
-                                    <input type="checkbox" id="randL1Pos">
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randL1Pos">
                                 </div>
-                                <div style="width:213px;">
+                                <div>
                                     <input id="l2X" value="200" >
                                     <input id="l2Y" value="-150" >
                                     <input id="l2Z" value="100" > Random
-                                    <input type="checkbox" id="randL2Pos">
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randL2Pos">
                                 </div>
-                                <input style="" type="checkbox" id="includeSpec" checked>
-                                <input style="" type="checkbox" id="includePlane">
-                                <div style="width:213px;">
+                                <input style="" type="checkbox" id="includeSpec" checked><br>
+                                <input style="" type="checkbox" id="includePlane" checked>
+                                <div>
                                     <input id="pX" value="200" >
                                     <input id="pY" value="-150" >
                                     <input id="pZ" value="400" > Random
-                                    <input type="checkbox" id="randPPos">
+                                    <input onchange="changeDisabled(event.target);" type="checkbox" id="randPPos">
                                 </div>
-                                <div style="width:124px;">
+                                <div>
                                     <input id="pnX" value="0" >
-                                    <input id="pnY" value="1.0" >
-                                    <input id="pnZ" value="1.0" >
+                                    <input id="pnY" value="-1.0" >
+                                    <input id="pnZ" value="-1.0" >
                                 </div>
                                 <input id="planeRefl" value="0.55">
                             </div>

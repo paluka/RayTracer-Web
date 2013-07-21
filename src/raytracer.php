@@ -103,6 +103,7 @@
   <style>
     input {
         max-width:30px;
+        height: 17.5px;
     }
     
     #inputsContainer {
@@ -112,10 +113,13 @@
         text-align: left;
     }
     
+    .checkBox {
+        height: 19px;
+    }   
     
   </style>
   </head>
-  <body onload="startJS();" >
+  <body onload="startRayTracing();" >
     <div class="container">
   
         <?php include('../../includes/header.php'); ?>
@@ -131,11 +135,11 @@
                     
                     <p>Change the settings and click the button to render the scene again</p>
                     <br />
-                    <canvas id="canvas1" style="border: dotted;" align="center" width="400px" height="400" onmousedown="mouseDown()" onmousemove="mouseMove(event)"></canvas>
+                    <canvas id="canvas1" style="border: dotted;" align="center" width="400px" height="400"></canvas>
                     <br/><br />
                     <div>
                         <div style="height:400px;">
-                        <div style="float:left; text-align:left;line-height:27px;">
+                        <div style="float:left; text-align:left;line-height:27px; font-size:16px;">
                             Number of Spheres (min: 1 - max:20):<br/>
                             Minimum Radius of the Spheres (min: 1 - max: 200):<br>
                             Maximum Radius of the Spheres (min: 1 - max: 200):<br>
@@ -147,6 +151,7 @@
                             Light 1 Position (X, Y, Z):<br>
                             Light 2 Position (X, Y, Z):<br>
                             Include Specular Reflection:<br>
+                            Include Shadows:<br>
                             Include Plane:<br>
                             Plane Position (X, Y, Z):<br>
                             Plane Normal (nX, nY, nZ - min: -1.00 - max: 1.00):<br>
@@ -193,8 +198,9 @@
                                     <input id="l2Z" value="100" > Random
                                     <input onchange="changeDisabled(event.target);" type="checkbox" id="randL2Pos">
                                 </div>
-                                <input style="" type="checkbox" id="includeSpec" checked><br>
-                                <input style="" type="checkbox" id="includePlane" checked>
+                                <input class="checkBox" type="checkbox" id="includeSpec" checked><br>
+                                <input class="checkBox" type="checkbox" id="includeShadows"><br>
+                                <input class="checkBox" type="checkbox" id="includePlane" checked>
                                 <div>
                                     <input id="pX" value="200" >
                                     <input id="pY" value="-150" >
@@ -209,7 +215,7 @@
                                 <input id="planeRefl" value="0.55">
                             </div>
                            </div>
-                            <a onclick="startJS();"><div class="button" style="float:right;" >Click here to Ray Trace</div></a>
+                            <a onclick="restartRayTracing();"><div class="button" style="float:right;" >Click here to Ray Trace</div></a>
                         
                         <div style="padding-top:100px">Resources: <br />
                             <a href="http://www.cc.gatech.edu/~phlosoft/photon/" target="_blank">1</a>,
@@ -236,17 +242,4 @@
 
     </body>
       
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-32905413-2']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
  </html>
